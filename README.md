@@ -89,3 +89,9 @@ Various forms of visualizations are included for either Go/KEGG:
 * Pathview Plots (KEGG)
 * Word Clouds
 
+## Acknowledgements:
+
+- [GuangchuangYu/clusterProfiler](https://github.com/GuangchuangYu/clusterProfiler)
+
+- [Mohammed Khalfan](https://gencore.bio.nyu.edu/)
+
