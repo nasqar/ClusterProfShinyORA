@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1557217972580.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3661195720",
+    "id" : "D4DA4B0C",
+    "lastKnownWriteTime" : 1557741992,
+    "last_content_update" : 1557741992997,
+    "path" : "~/projects/ClusterProfShinyORA/ui-tab-inputdata.R",
+    "project_path" : "ui-tab-inputdata.R",
+    "properties" : {
+        "cursorPosition" : "54,53",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

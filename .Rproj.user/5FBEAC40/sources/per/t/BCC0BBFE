@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559116976739.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1336014642",
+    "id" : "BCC0BBFE",
+    "lastKnownWriteTime" : 1559210268,
+    "last_content_update" : 1559210268795,
+    "path" : "~/projects/ClusterProfShinyORA/ui-tab-goplots.R",
+    "project_path" : "ui-tab-goplots.R",
+    "properties" : {
+        "cursorPosition" : "18,12",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

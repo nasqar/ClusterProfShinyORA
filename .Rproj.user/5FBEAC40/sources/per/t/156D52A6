@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559041247246.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3295109136",
+    "id" : "156D52A6",
+    "lastKnownWriteTime" : 1559214017,
+    "last_content_update" : 1559214017592,
+    "path" : "~/projects/ClusterProfShinyORA/ui-tab-keggplots.R",
+    "project_path" : "ui-tab-keggplots.R",
+    "properties" : {
+        "cursorPosition" : "2,111",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

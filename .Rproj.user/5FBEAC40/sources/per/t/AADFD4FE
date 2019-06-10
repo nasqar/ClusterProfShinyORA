@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1559202037038.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2760055716",
+    "id" : "AADFD4FE",
+    "lastKnownWriteTime" : 1560158890,
+    "last_content_update" : 1560158890624,
+    "path" : "~/projects/ClusterProfShinyORA/server-enrichGo.R",
+    "project_path" : "server-enrichGo.R",
+    "properties" : {
+        "cursorPosition" : "159,61",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

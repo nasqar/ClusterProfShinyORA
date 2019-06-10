@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1557749203128.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4224590351",
+    "id" : "1989AF63",
+    "lastKnownWriteTime" : 1559215578,
+    "last_content_update" : 1559215578344,
+    "path" : "~/projects/ClusterProfShinyORA/ui-tab-enrichGo.R",
+    "project_path" : "ui-tab-enrichGo.R",
+    "properties" : {
+        "cursorPosition" : "31,115",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
