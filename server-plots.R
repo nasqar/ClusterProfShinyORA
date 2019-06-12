@@ -146,32 +146,54 @@ output$cnetplot_kegg = renderPlot({
 
 
 pathviewReactive = eventReactive(input$generatePathview,{
-
+  withProgress(message = 'Plotting Pathview ...', {
+  
     isolate({
       kegg_enrich = enrichGoReactive()$kegg_enrich
       
       setProgress(value = 0.3, detail = paste0("Pathview ID ",input$pathwayIds," ..."))
       dme <- pathview(gene.data=myValues$gene_list, pathway.id=input$pathwayIds, species = myValues$organismKegg, gene.idtype=input$geneid_type)
+      file.copy(paste0(input$pathwayIds,".pathview.png"),paste0("testimage"))
       
+      setProgress(value = 0.7, detail = paste0("Pathview ID ",input$pathwayIds," generating pdf ..."))
+      dmePdf <- pathview(gene.data=myValues$gene_list, pathway.id=input$pathwayIds, species = myValues$organismKegg, gene.idtype=input$geneid_type,kegg.native = F)
+      
+      myValues$imagePath = paste0(input$pathwayIds,".pathview.")
       return(list(
-        src = paste0(input$pathwayIds,".pathview.png"),
+        src = paste0("testimage"),
         filetype = "image/png",
         alt = "pathview image"
       ))
     })
     
-  
+})
 })
 
 output$pathview_plot  = renderImage({
   
-  withProgress(message = "Plotting Pathview ...",{
-    
     return(pathviewReactive())
     
-  })
-  
 })
+
+output$pathviewPlotsAvailable <-
+  reactive({
+    return(!is.null(pathviewReactive()))
+  })
+outputOptions(output, 'pathviewPlotsAvailable', suspendWhenHidden=FALSE)
+
+output$downloadPathviewPng <- downloadHandler(
+  filename = function()  {paste0(myValues$imagePath,"png")},
+  content = function(file) {
+    file.copy(paste0(getwd(),'/',myValues$imagePath,"png"), file)
+  }
+)
+
+output$downloadPathviewPdf <- downloadHandler(
+  filename = function()  {paste0(myValues$imagePath,"pdf")},
+  content = function(file) {
+    file.copy(paste0(getwd(),'/',myValues$imagePath,"pdf"), file)
+  }
+)
 
 output$wordcloud_kegg = renderWordcloud2({
   withProgress(message = "Plotting Wordcloud ...",{

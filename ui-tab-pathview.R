@@ -17,13 +17,22 @@ tabItem(tabName = "pathviewTab",
           column(6,
                  selectInput("geneid_type","Gene ID type:", choices = c(""), selected = NULL)
                  ),
-          column(4,
+          column(6,
                  actionButton("generatePathview", "Generate Pathview", class = "btn btn-info")
                  ),
+          conditionalPanel("output.pathviewPlotsAvailable",
+                           column(3,
+                                  downloadButton('downloadPathviewPng','Download .png', class = "btn btn-warning", style="margin: 7px;")
+                           ),
+                           column(3,
+                                  downloadButton('downloadPathviewPdf','Download .pdf', class = "btn btn-warning", style="margin: 7px;")
+                           )
+                           )
+          ,
           tags$div(class = "clearBoth")
           
         ),
-        withSpinner(imageOutput(outputId = "pathview_plot"),type = 8)
+        withSpinner(imageOutput(outputId = "pathview_plot", inline = T),type = 8)
         
         
 )
