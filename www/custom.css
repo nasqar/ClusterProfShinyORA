@@ -123,7 +123,6 @@ a[bubbletooltip]:link, a[bubbletooltip]:visited
         {
             	text-decoration: none;
             	position: relative;
-            	color: red;
         }
 
         a[bubbletooltip]:before
@@ -141,8 +140,7 @@ a[bubbletooltip]:link, a[bubbletooltip]:visited
         a[bubbletooltip]:after
         {
                 position: absolute;
-                content: attr(bubbletooltip);                
-                font-weight: bold;
+                content: attr(bubbletooltip);
                 top: -35px;
                 left: -26px;
                 background: #292f45;
@@ -154,6 +152,7 @@ a[bubbletooltip]:link, a[bubbletooltip]:visited
                 border-radius: 6px;
                 white-space: nowrap;
                 visibility: hidden;
+                z-index:999;
         }
 
         a[bubbletooltip]:hover:before, a[bubbletooltip]:hover:after
