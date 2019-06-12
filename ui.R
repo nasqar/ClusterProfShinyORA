@@ -39,8 +39,10 @@ ui <- tagList(
         tags$style(HTML(
           " .shiny-output-error-validation {color: darkred; }"
         )),
+        tags$style(
+          type="text/css",
+          "#pathview_plot img {max-width: 100%; width: 100%; height: auto}"),
         tags$link(rel = "stylesheet", type = "text/css", href = "custom.css")
-        # tags$link(rel = "stylesheet", type = "text/css", href = "buttons.css")
       ),
       tabItems(
         source("ui-tab-intro.R", local = TRUE)$value,
