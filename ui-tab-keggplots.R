@@ -43,7 +43,7 @@ tabItem(tabName = "keggPlotsTab",
               )
             )
         ),
-        box(title = "Enriched induced graph (cnetplot)", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "cnetplot",
+        box(title = "Category Netplot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "cnetplot",
             fluidRow(
               column(12,
                      wellPanel(
