@@ -2,6 +2,7 @@
 observe({
   
   shinyjs::hide(selector = "a[data-value=\"enrichGoTab\"]")
+  shinyjs::hide(selector = "a[data-value=\"enrichKeggTab\"]")
   shinyjs::hide(selector = "a[data-value=\"goplotsTab\"]")
   shinyjs::hide(selector = "a[data-value=\"keggPlotsTab\"]")
   shinyjs::hide(selector = "a[data-value=\"pathviewTab\"]")
