@@ -160,6 +160,7 @@ enrichGoReactive <- eventReactive(input$initGo,{
     shinyjs::show(selector = "a[data-value=\"pathviewTab\"]")
     shinyjs::show(selector = "a[data-value=\"keggPlotsTab\"]")
     shinyjs::show(selector = "a[data-value=\"goplotsTab\"]")
+    shinyjs::show(selector = "a[data-value=\"enrichKeggTab\"]")
     shinyjs::show(selector = "a[data-value=\"enrichGoTab\"]")
     
     return(list('go_enrich'=go_enrich, 'kegg_enrich' = kegg_enrich))
@@ -171,7 +172,11 @@ output$enrichGoTable <- renderDataTable({
   enrichGo <- enrichGoReactive()
   
   if(!is.null(enrichGo)){
-    DT::datatable(enrichGo$go_enrich@result, options = list(pageLength = 5,scrollX = TRUE))
+    resultDF = enrichGo$go_enrich@result
+    if(isFALSE(input$showGeneidGo))
+      resultDF = resultDF[,-which(names(resultDF) == "geneID")]
+    
+    DT::datatable(resultDF, options = list(scrollX = TRUE))
   }
   
 },
@@ -191,10 +196,14 @@ outputOptions(output, 'enrichGoAvailable', suspendWhenHidden=FALSE)
 
 
 output$enrichKEGGTable <- renderDataTable({
-  enrichGo <- enrichGoReactive()
+  enrichKEGG <- enrichGoReactive()
   
-  if(!is.null(enrichGo)){
-    DT::datatable(enrichGo$kegg_enrich@result, options = list(pageLength = 5, scrollX = TRUE))
+  if(!is.null(enrichKEGG)){
+    resultDF = enrichKEGG$kegg_enrich@result
+    if(isFALSE(input$showGeneidKegg))
+      resultDF = resultDF[,-which(names(resultDF) == "geneID")]
+    
+    DT::datatable(resultDF, options = list(scrollX = TRUE))
   }
   
 },
@@ -235,5 +244,9 @@ observeEvent(input$gotoPathview, {
 })
 
 observeEvent(input$gotoWordcloud, {
+  GotoTab('wordcloudTab')
+})
+
+observeEvent(input$gotoWordcloud1, {
   GotoTab('wordcloudTab')
 })
