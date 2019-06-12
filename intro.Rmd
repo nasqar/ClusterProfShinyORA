@@ -10,25 +10,27 @@ runtime: shiny
 
 ---
 
-This is a web-based interactive application that wraps the popular <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html" target="_blank"><strong>clusterProfiler</strong></a> package which implements methods to analyze and visualize functional profiles of genomic coordinates, gene and gene clusters.
+This web-based interactive application wraps the popular <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html" target="_blank"><strong>clusterProfiler</strong></a> package which implements methods to analyze and visualize functional profiles of genomic coordinates, genes and gene clusters.
 
 Users can upload their own differential gene expression (DGE) data from <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html" target="_blank"><strong>DESeq2</strong></a> or import data from the upstream <a href="http://nasqar.abudhabi.nyu.edu/deseq2shiny/" target="_blank"><strong>Deseq2Shiny</strong></a> app.
 
-This app allows for quick and easy **Over-representation analysis (ORA)** of GO-Terms and KEGG pathways.
+This application is meant to provide an intuitive interface for researchers to easily perform **Over-representation analysis** of GO-Terms and KEGG pathways with no prior programming experience in R.
 
-It is meant to provide an intuitive interface for researchers to easily **upload, analyze, visualize, and explore single-cell RNA-seq data** interactively with no prior programming knowledge in R.
-
-Visuals produced include dot plots, wordclouds, category net plots, enrichment map plots, GO induced graphs, gsea plots, and enriched KEGG pathway plots using the  <a href="https://bioconductor.org/packages/release/bioc/html/pathview.html" target="_blank"><strong>Pathview package</strong></a>.
+Visuals produced include dot plots, wordclouds, category net plots, enrichment map plots, GO induced graphs, and enriched KEGG pathway plots using the  <a href="https://bioconductor.org/packages/release/bioc/html/pathview.html" target="_blank"><strong>Pathview package</strong></a>.
 
 The application follows this <a href="gencore.nyu.edu/tutorial" target="_blank">tutorial</a> <link>
 
 See **Figure 1** below for example output plots (Click on image to enlarge).
 
-<div class="col-md-12"><hr style="border-top: none;"></div>
+<div class="col-md-12"><hr ></div>
 
-<p style="width: 100%;max-width:300px;margin: 10px auto;display: block;"><strong><em>Figure 1: Example plots</em></strong></p>
+<div class="col-md-12">
+<p><strong><em>Figure 1: Example plots</em></strong></p>
+</div>
 
-<div class="col-md-3">
+<div class="">
+<div class="row">
+<div class="col-md-4">
 
 <a href="#" class="pop">
     <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
@@ -38,16 +40,29 @@ See **Figure 1** below for example output plots (Click on image to enlarge).
 </a>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-4">
 <a href="#" class="pop">
     <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
-    <h5 class="text-center">GO induced graph</h5>
+    <h5 class="text-center">Dot plot</h5>
+    <img src="www/dotplot.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
+    </div>
+</a>
+</div>
+
+<div class="col-md-4">
+<a href="#" class="pop">
+    <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
+    <h5 class="text-center">Category Netplot</h5>
     <img src="www/cnetplot.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
     </div>
 </a>
 </div>
 
-<div class="col-md-3">
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
 <a href="#" class="pop">
     <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
     <h5 class="text-center">GO induced graph</h5>
@@ -56,7 +71,16 @@ See **Figure 1** below for example output plots (Click on image to enlarge).
 </a>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-4">
+<a href="#" class="pop">
+    <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
+    <h5 class="text-center">Pathview plot</h5>
+    <img src="www/pathview.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
+    </div>
+</a>
+</div>
+
+<div class="col-md-4">
 <a href="#" class="pop">
     <div class="BoxArea4" style="width: 100%;max-width:300px;margin: 0 auto;display: block;">
     <h5 class="text-center">Word Cloud</h5>
@@ -65,7 +89,8 @@ See **Figure 1** below for example output plots (Click on image to enlarge).
 </a>
 </div>
 
-
+</div>
+</div>
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">              
