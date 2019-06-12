@@ -1,22 +1,5 @@
 tabItem(tabName = "goplotsTab",
         h2(strong("GO Plots")),
-        # box(title = "Word Cloud", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "wordcloud",
-        #     fluidRow(
-        #       column(3,
-        #              wellPanel(
-        #                numericInput("maxWords", "Max. Words", value = 25),
-        #                radioButtons("wordsColor","Color theme:", c("Light"="random-light", "Dark"="random-dark")),
-        #                selectizeInput("wordShape","Shape:", c("circle","cardioid","diamond","triangle-forward","triangle","triangle","star"))
-        #              )
-        #       ),
-        #       column(9,
-        #              wellPanel(
-        #                wordcloud2Output(outputId = "wordcloud")
-        #              )
-        #              
-        #       )
-        #     )
-        # ),
         box(title = "Bar Plot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "barplot",
             fluidRow(
               column(3,
@@ -61,7 +44,7 @@ tabItem(tabName = "goplotsTab",
               )
             )
         ),
-        box(title = "Enriched GO induced graph (goplot)", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "goInducedGraph",
+        box(title = "Category Netplot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "goInducedGraph",
             fluidRow(
               column(12,
                      wellPanel(
