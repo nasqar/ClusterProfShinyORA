@@ -68,8 +68,8 @@ ui <- tagList(
         <p align="center" width="4">Maintained by: <a href="ay21@nyu.edu">Ayman Yousif</a> </p>
         <p align="center" width="4">Using ClusterProfiler 3.0.0 </p>
         <p align="center" width="4"><strong>Acknowledgements: </strong></p>
-        <p align="center" width="4">1) <a mailto="mkhalfan@nyu.edu">Mohammed Khalfan</a></p>
-        <p align="center" width="4">2) <a href="https://github.com/GuangchuangYu/clusterProfiler" target="_blank">GuangchuangYu/clusterProfiler</a></p>
+        <p align="center" width="4">1) <a href="https://github.com/GuangchuangYu/clusterProfiler" target="_blank">GuangchuangYu/clusterProfiler</a></p>
+        <p align="center" width="4">2) <a href="#">Mohammed Khalfan - Tutorial </a></p>
         <p align="center" width="4">Copyright (C) 2019, code licensed under GPLv3</p>'
         )
       ),
