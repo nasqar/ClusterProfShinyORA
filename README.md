@@ -17,13 +17,7 @@ The application follows this <a href="gencore.nyu.edu/tutorial" target="_blank">
 
 See below for example output plots.
 
-<img src="www/barplot.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
-  
-<img src="www/cnetplot.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
-    
-<img src="www/goplot.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
-   
-<img src="www/wordcloud.png" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
+<img src="www/plotsAll.jpg" alt="Workflow" style="width: 100%;max-width:300px;margin: 0 auto;display: block;"/>
     
 
 <div class="col-md-12"><hr style="border-top: none;"></div>
