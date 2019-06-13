@@ -1,5 +1,19 @@
 tabItem(tabName = "goplotsTab",
         h2(strong("GO Plots")),
+        box(title = "Upset Plot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "barplot",
+            fluidRow(
+              column(3,
+                     wellPanel(
+                       numericInput("showCategory_upset", "number of categories to show", value = 10)
+                     )
+              ),
+              column(9,
+                     wellPanel(
+                       withSpinner(plotOutput(outputId = "upsetPlot"),type = 8)
+                     )
+              )
+            )
+        ),
         box(title = "Bar Plot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "barplot",
             fluidRow(
               column(3,

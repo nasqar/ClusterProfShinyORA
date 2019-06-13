@@ -9,6 +9,7 @@ require(shiny)
 library(clusterProfiler)
 library(DOSE)
 library(GOplot)
+library(enrichplot)
 library(pathview)
 library(wordcloud2)
 

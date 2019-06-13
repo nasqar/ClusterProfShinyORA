@@ -1,3 +1,12 @@
+output$upsetPlot = renderPlot({
+  withProgress(message = "Plotting upsetplot ...",{
+    go_enrich = enrichGoReactive()$go_enrich
+    
+    upsetplot(go_enrich, 
+            n = input$showCategory_upset)
+  })
+  
+})
 
 output$barPlot = renderPlot({
   withProgress(message = "Plotting barplot ...",{
