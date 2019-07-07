@@ -18,7 +18,7 @@ This application is meant to provide an intuitive interface for researchers to e
 
 Visuals produced include dot plots, wordclouds, category net plots, enrichment map plots, GO induced graphs, and enriched KEGG pathway plots using the  <a href="https://bioconductor.org/packages/release/bioc/html/pathview.html" target="_blank"><strong>Pathview package</strong></a>.
 
-The application follows this <a href="gencore.nyu.edu/tutorial" target="_blank">tutorial</a> <link>
+The application follows this <a href="https://learn.gencore.bio.nyu.edu/rna-seq-analysis/over-representation-analysis/" target="_blank">tutorial</a> closely
 
 See **Figure 1** below for example output plots (Click on image to enlarge).
 
@@ -115,7 +115,7 @@ This application accepts the following types of input data:
 
 - For demo purposes, you can select "Example data"
 
-- You can follow the steps afterwards to run the analysis mirroring the tutorial in order to get familiar with the app
+- You can follow the steps afterwards to run the analysis mirroring the <a href="https://learn.gencore.bio.nyu.edu/rna-seq-analysis/over-representation-analysis/" target="_blank">tutorial</a> in order to get familiar with the app
 
 ### 2. Upload your own data (gene counts):
 

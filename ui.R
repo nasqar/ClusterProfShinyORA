@@ -69,7 +69,7 @@ ui <- tagList(
         <p align="center" width="4">Using ClusterProfiler</p>
         <p align="center" width="4"><strong>Acknowledgements: </strong></p>
         <p align="center" width="4">1) <a href="https://github.com/GuangchuangYu/clusterProfiler" target="_blank">GuangchuangYu/clusterProfiler</a></p>
-        <p align="center" width="4">2) <a href="#">Mohammed Khalfan - Tutorial </a></p>
+        <p align="center" width="4">2) <a href="https://learn.gencore.bio.nyu.edu/rna-seq-analysis/over-representation-analysis/" target="_blank">Mohammed Khalfan - Over Representation Analysis Tutorial </a></p>
         <p align="center" width="4">Copyright (C) 2019, code licensed under GPLv3</p>'
         )
       ),
