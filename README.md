@@ -24,7 +24,6 @@ See below for example output plots.
 
 ## **Input Data Types**
 
----
 
 This application accepts the following types of input data:
 
@@ -66,7 +65,7 @@ This application accepts the following types of input data:
 <div class="col-md-12"><hr style="border-top: none;"></div>
 
 ## **Run Results**
----
+
 ### 1. Data Output
 The output results will be either displayed and/or is downloadable
 - EnrichGo results table
@@ -87,5 +86,5 @@ Various forms of visualizations are included for either Go/KEGG:
 
 - [GuangchuangYu/clusterProfiler](https://github.com/GuangchuangYu/clusterProfiler)
 
-- [Mohammed Khalfan](https://gencore.bio.nyu.edu/)
+- [Mohammed Khalfan - Gene Set Enrichment Tutorial](https://learn.gencore.bio.nyu.edu/rna-seq-analysis/gene-set-enrichment-analysis/)
 
