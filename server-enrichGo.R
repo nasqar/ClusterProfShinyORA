@@ -34,7 +34,9 @@ enrichGoReactive <- eventReactive(input$initGo,{
         
         # Exctract significant results
         # ALLOW USERS TO EDIT 0.05 AS A PARAMETER
-        sig_genes_df = subset(df, padj < input$padjCutoff)
+        #sig_genes_df = subset(df, padj < input$padjCutoff)
+        sig_genes_df = df[df[,input$padjColumn] < input$padjCutoff,]
+        sig_genes_df = na.omit(sig_genes_df)
         
         # From significant results, we want to filter on log2fold change
         genes <- sig_genes_df[[input$log2fcColumn]]
