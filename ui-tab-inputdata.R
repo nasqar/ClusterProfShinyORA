@@ -14,7 +14,7 @@ tabItem(tabName = "datainput",
                                               p("CSV counts file")
 
                              ),
-                             conditionalPanel(condition = "input.data_file_type=='csvfile' || input.data_file_type=='upload10x'",
+                             conditionalPanel(condition = "input.data_file_type=='csvfile'",
                                               fileInput('datafile', 'Choose File(s) Containing Data', multiple = TRUE)
                              )
 
@@ -62,6 +62,9 @@ tabItem(tabName = "datainput",
                                               ),
                                               column(6,
                                                      numericInput("qvalCuttoff","Q-Value Cutoff:", value = 0.1)
+                                              ),
+                                              column(6,
+                                                     selectInput("pAdjustMethod","pAdjustMethod:", choices = c("holm", "hochberg", "hommel", "bonferroni", "BH", "BY", "fdr", "none"), selected = "none")
                                               ),
                                               tags$div(class = "clearBoth")
                                             ),

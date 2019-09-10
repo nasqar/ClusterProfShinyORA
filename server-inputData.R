@@ -21,7 +21,7 @@ inputDataReactive <- reactive({
   
   # Check if example selected, or if not then ask to upload a file.
   shiny:: validate(
-    need( identical(input$data_file_type,"examplecounts")|(!is.null(input$datafile))|(!is.null(query[['countsdata']])),
+    need( identical(input$data_file_type,"examplecounts")|(!is.null(input$datafile)),
           message = "Please select a file")
   )
   
@@ -44,17 +44,20 @@ inputDataReactive <- reactive({
   }
   
   #inFile <- input$datafile
+  js$addStatusIcon("datainput","loading")
   
-  if (!is.null(inFile) && !is.null(query[['countsdata']])) {
-    #js$addStatusIcon("datainput","loading")
-    seqdata <- read.csv(inFile, header=TRUE, sep=",", row.names = 1)
+  if (!is.null(inFile)) {
+    seqdata <- read.csv(inFile$datapath, header=TRUE, sep=",")
     print('uploaded seqdata')
     if(ncol(seqdata)==1) { # if file appears not to work as csv try tsv
-      seqdata <- read.tsv(inFile, header=TRUE, row.names = 1)
+      seqdata <- read.tsv(inFile$datapath, header=TRUE)
       print('changed to tsv, uploaded seqdata')
     }
     shiny::validate(need(ncol(seqdata)>1,
                          message="File appears to be one column. Check that it is a comma or tab delimited (.csv) file."))
+    
+    js$addStatusIcon("datainput","done")
+    js$collapse("uploadbox")
     
     return(list('data'=seqdata))
   }
