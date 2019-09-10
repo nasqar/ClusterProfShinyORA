@@ -15,6 +15,8 @@ enrichGoReactive <- eventReactive(input$initGo,{
       removeNotification("errorNotify")
       removeNotification("errorNotify1")
       removeNotification("errorNotify2")
+      removeNotification("warnNotify")
+      removeNotification("warnNotify2")
       
       validate(need(tryCatch({
         df <- inputDataReactive()$data
@@ -60,8 +62,15 @@ enrichGoReactive <- eventReactive(input$initGo,{
                               readable = T,
                               ont = input$ontology,
                               pvalueCutoff = input$pvalCuttoff, 
-                              qvalueCutoff = input$qvalCuttoff)
+                              qvalueCutoff = input$qvalCuttoff,
+                              pAdjustMethod = input$pAdjustMethod)
         
+        if(nrow(go_enrich) < 1)
+        {
+          showNotification(id="warnNotify", "No gene can be mapped ...", type = "warning", duration = NULL)
+          showNotification(id="warnNotify2", "Tune the parameters and try again.", type = "warning", duration = NULL)
+          return(NULL)
+        }
         
         updateNumericInput(session, "showCategory_bar", max = nrow(go_enrich@result) , min = 0, value = ifelse(nrow(go_enrich@result) > 0, 5,0))
         updateNumericInput(session, "showCategory_dot", max = nrow(go_enrich@result) , min = 0, value = ifelse(nrow(go_enrich@result) > 0, 5,0))
@@ -86,7 +95,7 @@ enrichGoReactive <- eventReactive(input$initGo,{
         dedup_ids = ids[!duplicated(ids[c(input$keytype)]),]
         
         # Create a new dataframe df2 which has only the genes which were successfully mapped using the bitr function above
-        df2 = df[df$X %in% dedup_ids$ENSEMBL,]
+        df2 = df[df$X %in% dedup_ids[,input$keytype],]
         
         # Create a new column in df2 with the corresponding ENTREZ IDs
         df2$Y = dedup_ids$ENTREZID
@@ -107,7 +116,9 @@ enrichGoReactive <- eventReactive(input$initGo,{
         
         # Exctract significant results from df2
         # ALLOW USERS TO EDIT 0.05 AS A PARAMETER
-        kegg_sig_genes_df = subset(df2, padj < input$padjCutoff)
+        #kegg_sig_genes_df = subset(df2, padj < input$padjCutoff)
+        kegg_sig_genes_df = df2[df2[,input$padjColumn] < input$padjCutoff,]
+        kegg_sig_genes_df = na.omit(kegg_sig_genes_df)
         
         # From significant results, we want to filter on log2fold change
         kegg_genes <- kegg_sig_genes_df[[input$log2fcColumn]]
@@ -136,10 +147,8 @@ enrichGoReactive <- eventReactive(input$initGo,{
         
         myValues$organismKegg = organismsDbKegg[input$organismDb]
         
-        updateSelectInput(session, "geneid_type", choices = gene.idtype.list, selected = "ENSEMBL")
+        updateSelectInput(session, "geneid_type", choices = gene.idtype.list, selected = input$keytype)
         updateSelectizeInput(session,'pathwayIds', choices=kegg_enrich@result$ID)
-        
-        
         
       }, error = function(e) {
         
@@ -152,10 +161,12 @@ enrichGoReactive <- eventReactive(input$initGo,{
       }
       
       ), 
-      "Error merging files. Check!"))
+      "Error. Check!"))
       
       
     })
+    
+    #if()
     
     
     shinyjs::show(selector = "a[data-value=\"wordcloudTab\"]")
