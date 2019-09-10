@@ -1,5 +1,6 @@
 tabItem(tabName = "keggPlotsTab",
         h2(strong("KEGG Plots")),
+        tags$div(
         box(title = "Bar Plot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "barplot",
             fluidRow(
               column(3,
@@ -57,4 +58,6 @@ tabItem(tabName = "keggPlotsTab",
               )
             )
         )
+        
+        , style = "display:table;")
 )

@@ -1,5 +1,6 @@
 tabItem(tabName = "goplotsTab",
         h2(strong("GO Plots")),
+        tags$div(
         box(title = "Upset Plot", solidHeader = T, status = "danger", width = 12, collapsible = T,id = "barplot",
             fluidRow(
               column(3,
@@ -87,4 +88,6 @@ tabItem(tabName = "goplotsTab",
               )
             )
         )
+        
+        , style = "display:table;")
 )
