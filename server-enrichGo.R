@@ -59,6 +59,8 @@ enrichGoReactive <- eventReactive(input$initGo,{
                               universe = names(gene_list),
                               OrgDb = input$organismDb, 
                               keyType = input$keytype,
+                              minGSSize = input$minGSSize, 
+                              maxGSSize = input$maxGSSize,
                               readable = T,
                               ont = input$ontology,
                               pvalueCutoff = input$pvalCuttoff, 
@@ -95,7 +97,7 @@ enrichGoReactive <- eventReactive(input$initGo,{
         dedup_ids = ids[!duplicated(ids[c(input$keytype)]),]
         
         # Create a new dataframe df2 which has only the genes which were successfully mapped using the bitr function above
-        df2 = df[df$X %in% dedup_ids[,input$keytype],]
+        df2 = df[df[[input$geneColumn]] %in% dedup_ids[,input$keytype],]
         
         # Create a new column in df2 with the corresponding ENTREZ IDs
         df2$Y = dedup_ids$ENTREZID
@@ -143,7 +145,14 @@ enrichGoReactive <- eventReactive(input$initGo,{
                             "org.Pt.eg.db"="ptr","org.Ag.eg.db"="aga","org.Pf.plasmo.db"="pfa",
                             "org.EcSakai.eg.db"="ecs")
         
-        kegg_enrich <- enrichKEGG(gene=kegg_genes, universe=names(kegg_gene_list),organism=organismsDbKegg[input$organismDb], pvalueCutoff =input$pvalCuttoff, keyType = "ncbi-geneid")
+        kegg_enrich <- enrichKEGG(gene=kegg_genes, 
+                                  universe=names(kegg_gene_list),
+                                  organism=organismsDbKegg[input$organismDb], 
+                                  pvalueCutoff =input$pvalCuttoff,
+                                  qvalueCutoff = input$qvalCuttoff,
+                                  keyType = "ncbi-geneid",
+                                  minGSSize = input$minGSSize, 
+                                  maxGSSize = input$maxGSSize)
         
         myValues$organismKegg = organismsDbKegg[input$organismDb]
         

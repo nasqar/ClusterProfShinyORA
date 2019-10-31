@@ -57,6 +57,12 @@ tabItem(tabName = "datainput",
                                               column(6,
                                                      selectInput("ontology","Ontology:", choices = c("MF", "BP", "CC"), selected = "BP")
                                               ),
+                                              column(4,
+                                                     numericInput("minGSSize","minGSSize:", value = 5)
+                                              ),
+                                              column(4,
+                                                     numericInput("maxGSSize","maxGSSize:", value = 500)
+                                              ),
                                               column(6,
                                                      numericInput("pvalCuttoff","P-Value Cutoff:", value = 0.05)
                                               ),
