@@ -1,5 +1,7 @@
 # ClusterProfShinyORA
-clusterProfiler Over-representation analysis R shiny
+- clusterProfiler Over-representation analysis R shiny
+- This is part of the NASQAR toolbox
+- Pre-print: [NASQAR: A web-based platform for High-throughput sequencing data analysis and visualization](https://doi.org/10.1101/709980)
 
 ---
 
