@@ -35,7 +35,7 @@ ui <- tagList(
     ),
     dashboardBody(
       shinyjs::useShinyjs(),
-      extendShinyjs(script = "www/custom.js"),
+      extendShinyjs(script = "www/custom.js", functions = c("addStatusIcon", "collapse")),
       tags$head(
         tags$style(HTML(
           " .shiny-output-error-validation {color: darkred; }"
